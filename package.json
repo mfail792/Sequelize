@@ -1,0 +1,24 @@
+{
+  "name": "sequelize",
+  "version": "1.0.0",
+  "description": "Using sequelize ORM to create a library with basic CRUD capability.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfail792/Sequelize.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfail792/Sequelize/issues"
+  },
+  "homepage": "https://github.com/mfail792/Sequelize#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
