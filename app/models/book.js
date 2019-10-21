@@ -8,8 +8,8 @@ var sequelize = require("../config/connection.js");
 var Book = sequelize.define('book', {
     id: {
         type: Sequelize.INTEGER,
-        autoincrement: true,
-        piaryKey: true
+        autoIncrement: true,
+        primaryKey: true
     },
     title: {
         type: Sequelize.STRING
@@ -27,3 +27,10 @@ var Book = sequelize.define('book', {
     timestamps: false
 });
 
+//Sync with the DB
+
+Book.sync();
+
+//Export book model
+
+module.exports = Book;
