@@ -52,18 +52,38 @@ app.get("/api/:author", function (req, res) {
 
 //Get all 'long' books (over 300 pages or more)
 app.get("/api/books/long", function (req, res) {
-        Book.findAll({
-            where: {
-                pages: {
-                    $gte: 300
-                }
+    Book.findAll({
+        where: {
+            pages: {
+                $gte: 300
             }
-        }).then(function (results) {
-            res.json(results);
-        });
+        }
+    }).then(function (results) {
+        res.json(results);
     });
+});
 
-    //Get short books
-    
+//Get short books
+app.get("/api/books/short", function (req, res) {
+    Book.findAll({
+        where: {
+            pages: {
+                $lte: 150
+            }
+        }
+    }).then(function (results) {
+        res.json(results);
+    });
+});
 
+//Adding a book
+app.post("/api/new", function (req, res) {
+
+    Create.create({
+        title: 'foo',
+        description: 'bar',
+        deadline: new Date()
+    }).then(function (task) {
+    });
+})
 
