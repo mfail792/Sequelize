@@ -79,11 +79,21 @@ app.get("/api/books/short", function (req, res) {
 //Adding a book
 app.post("/api/new", function (req, res) {
 
-    Create.create({
-        title: 'foo',
-        description: 'bar',
-        deadline: new Date()
-    }).then(function (task) {
+    Book.create({
+        title: req.body.title,
+        author: req.body.author,
+        genre: req.body.genre,
+        pages: req.body.pages
     });
 })
+
+//Deleting a book
+app.post("/api/delete", function (req, res) {
+    Book.destroy({
+        where: {
+            id: req.body.id
+        }
+    });
+});
+
 
