@@ -14,4 +14,4 @@ $.get("/api/books/long", function (data) {
     }
 });
 
-//not currently displaying long or short books...need to fix
+//not currently displaying long or short books...need to fix.  Displays ALL fine...
